@@ -37,7 +37,7 @@ foreach(path IN LISTS LibsPathDirectories)
 
     add_executable("${LibName}Tester" ${TestFiles})
     target_link_libraries("${LibName}Tester" gtest gtest_main ${LibName})
-    target_compile_definitions("${LibName}Tester" PUBLIC DEBUG)
+    target_compile_definitions("${LibName}Tester" PUBLIC TestMethods)
     add_test("${LibName}_Tests" "${LibName}Tester")
 
 endforeach(path)

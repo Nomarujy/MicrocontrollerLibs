@@ -24,3 +24,13 @@ TEST(BMP280, temp)
 
     ASSERT_EQ(expected_temp, temp);
 }
+
+const uint32_t expectedPresure = 25767233;
+
+TEST(BMP280, presure)
+{
+    int32_t tFine = CalculateTfine(tempMeasurement, trimmingValues);
+    uint32_t presure = CalculatePresure(tFine, presureMeasurement, trimmingValues);
+
+    ASSERT_EQ(expectedPresure, presure);
+}
